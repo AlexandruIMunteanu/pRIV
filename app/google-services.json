@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "62041808472",
+    "project_id": "proiect-cmo-97274",
+    "storage_bucket": "proiect-cmo-97274.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62041808472:android:b5c4bb1a561df6be44342d",
+        "android_client_info": {
+          "package_name": "com.example.travellist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5KtJmnw51XR_ahx1yPjUvisX09iPWQ-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
