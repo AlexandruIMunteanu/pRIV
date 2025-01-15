@@ -30,4 +30,30 @@ public class PointsAdapter extends RecyclerView.Adapter<PointsAdapter.PointViewH
             .inflate(R.layout.item_point, parent, false);
         return new PointViewHolder(view);
     }
+
+    @Override
+    public void onBindViewHolder(@NonNull PointViewHolder holder, int position) {
+        holder.bind(points.get(position), position);
+    }
+
+    @Override
+    public int getItemCount() {
+        return points.size();
+    }
+
+    class PointViewHolder extends RecyclerView.ViewHolder {
+        private TextView pointText;
+        private ImageButton deleteButton;
+
+        PointViewHolder(View itemView) {
+            super(itemView);
+            pointText = itemView.findViewById(R.id.pointText);
+            deleteButton = itemView.findViewById(R.id.deleteButton);
+        }
+
+        void bind(String point, int position) {
+            pointText.setText(point);
+            deleteButton.setOnClickListener(v -> listener.onDelete(position));
+        }
+    }
 } 

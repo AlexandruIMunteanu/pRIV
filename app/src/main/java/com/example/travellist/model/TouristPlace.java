@@ -21,5 +21,17 @@ public class TouristPlace implements Serializable {
         this.userId = userId;
     }
 
-    // Getters and setters remain the same
+    // Getters and Setters
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
+    public String getCountry() { return country; }
+    public void setCountry(String country) { this.country = country; }
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city = city; }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
+    public List<String> getPointsOfInterest() { return pointsOfInterest; }
+    public void setPointsOfInterest(List<String> pointsOfInterest) { this.pointsOfInterest = pointsOfInterest; }
+    public String getUserId() { return userId; }
+    public void setUserId(String userId) { this.userId = userId; }
 } 

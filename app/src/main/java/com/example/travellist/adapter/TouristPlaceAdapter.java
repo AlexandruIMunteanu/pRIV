@@ -29,4 +29,38 @@ public class TouristPlaceAdapter extends RecyclerView.Adapter<TouristPlaceAdapte
             LayoutInflater.from(parent.getContext()), parent, false);
         return new TouristPlaceViewHolder(binding);
     }
+
+    @Override
+    public void onBindViewHolder(@NonNull TouristPlaceViewHolder holder, int position) {
+        holder.bind(places.get(position));
+    }
+
+    @Override
+    public int getItemCount() {
+        return places.size();
+    }
+
+    public void updatePlaces(List<TouristPlace> newPlaces) {
+        this.places = newPlaces;
+        notifyDataSetChanged();
+    }
+
+    class TouristPlaceViewHolder extends RecyclerView.ViewHolder {
+        private final ItemTouristPlaceBinding binding;
+
+        TouristPlaceViewHolder(ItemTouristPlaceBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+        }
+
+        void bind(TouristPlace place) {
+            binding.countryCity.setText(place.getCountry() + ", " + place.getCity());
+            binding.description.setText(place.getDescription());
+            binding.pointsOfInterest.setText("Puncte de interes: " + 
+                String.join(", ", place.getPointsOfInterest()));
+
+            binding.editButton.setOnClickListener(v -> listener.onEditClick(place));
+            binding.deleteButton.setOnClickListener(v -> listener.onDeleteClick(place));
+        }
+    }
 } 
